@@ -1,1 +1,0 @@
-# LPA2_Prolog

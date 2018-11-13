@@ -1,26 +1,27 @@
-% Exercício IP 7. Países e Fronteiras (Exame Normal 2003/2004) Suponha que
-% possui um predicado Prolog descrevendo informação sobre
-% Países. Os factos têm o formato país(Nome, Continente, Populacão,
-% Fronteiras), onde Nome é o nome do País, Continente é o continente a
-% que o país pertence (africa, america, asia, europa ou oceania),
-% Populacão é um inteiro que representa o número de habitantes (em
-% milhões) do país e Fronteiras.é uma lista contendo os nomes dos países
-% com que o país faz fronteira.
+% ExercÃ­cio IP 7. PaÃ­ses e Fronteiras (Exame Normal 2003/2004) Suponha que
+% possui um predicado Prolog descrevendo informaÃ§Ã£o sobre
+% PaÃ­ses. Os factos tÃªm o formato paÃ­s(Nome, Continente, PopulacÃ£o,
+% Fronteiras), onde Nome Ã© o nome do PaÃ­s, Continente Ã© o continente a
+% que o paÃ­s pertence (africa, america, asia, europa ou oceania),
+% PopulacÃ£o Ã© um inteiro que representa o nÃºmero de habitantes (em
+% milhÃµes) do paÃ­s e Fronteiras.Ã© uma lista contendo os nomes dos paÃ­ses
+% com que o paÃ­s faz fronteira.
 
-pais(alemanha, europa, 82, [frança, belgica, holanda, suica]).
+pais(alemanha, europa, 82, [franÃ§a, belgica, holanda, suica]).
 pais(australia, oceania, 19, []).
-pais(belgica, europa, 10, [frança, holanda, alemanha]).
-pais(espanha, europa, 40, [portugal, frança]).
-pais(frança, europa, 59, [espanha, suica, belgica, alemanha, italia]).
+pais(belgica, europa, 10, [franÃ§a, holanda, alemanha]).
+pais(espanha, europa, 40, [portugal, franÃ§a]).
+pais(franÃ§a, europa, 59, [espanha, suica, belgica, alemanha, italia]).
 pais(holanda, europa, 15, [belgica, alemanha]).
 pais(indonesia, oceania, 210, []).
-pais(italia, europa, 57, [frança, suica]).
+pais(italia, europa, 57, [franÃ§a, suica]).
 pais(madagascar, africa, 17, []).
 pais(portugal, europa, 10, [espanha]).
-pais(suica, europa, 7, [frança, alemanha, italia]).
+pais(suica, europa, 7, [franÃ§a, alemanha, italia]).
 
-% pop_elevada(+Continente, -Lista) que calcule a lista de todos os países com mais de 15 milhões de
+% pop_elevada(+Continente, -Lista) que calcule a lista de todos os paÃ­ses com mais de 15 milhÃµes de
 % habitantes de um dado continente, ordenada por ordem crescente de
-% população, no formato indicado.
+% populaÃ§Ã£o, no formato indicado.
+
 pop_elevada(Cont,List):- findall(Pop-Pais, (pais(Pais, Cont, Pop,_), Pop > 15), L), sort(L, List).
 
